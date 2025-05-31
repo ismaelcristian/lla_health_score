@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from sqlalchemy import create_engine
 import pandas as pd
 import os
-
+from pendulum import timezone
 # ========== Task Functions ==========
 
 def load_data(**context):
@@ -338,24 +338,26 @@ def send_to_elasticsearch(**kwargs):
     except Exception as e:
         print(f"❌ Elasticsearch bulk insert failed: {e}")
 # ========== DAG Definition ==========
+local_tz = timezone("America/Mexico_City")
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2024, 1, 1),
+    'start_date': local_tz.datetime(2025, 5, 22, 6, 0, 0),
+    'end_date': local_tz.datetime(2025, 11, 22, 6, 0, 0),
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
 
 dag = DAG(
-    'libertyPr_health_score',
+    'libertyPr_health_score_1',
     default_args=default_args,
     description='Single-file version of health score DAG for LibertyPR',
+    schedule_interval='0 4 * * *',  # run every day at 06:00
     max_active_runs=1,
-    schedule_interval='@daily',
-    catchup=False
+    catchup=True,
+    tags=['health_score'],
 )
-
 # ========== Tasks ==========
 
 load = PythonOperator(

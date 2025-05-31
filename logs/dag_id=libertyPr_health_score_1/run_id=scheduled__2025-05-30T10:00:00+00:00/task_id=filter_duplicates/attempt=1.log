@@ -1,0 +1,23 @@
+[2025-05-31T04:02:14.864-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T04:02:14.912-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.filter_duplicates scheduled__2025-05-30T10:00:00+00:00 [queued]>
+[2025-05-31T04:02:14.932-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.filter_duplicates scheduled__2025-05-30T10:00:00+00:00 [queued]>
+[2025-05-31T04:02:14.932-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T04:02:14.957-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): filter_duplicates> on 2025-05-30 10:00:00+00:00
+[2025-05-31T04:02:14.968-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=134935) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T04:02:14.971-0600] {standard_task_runner.py:72} INFO - Started process 134937 to run task
+[2025-05-31T04:02:14.972-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'filter_duplicates', 'scheduled__2025-05-30T10:00:00+00:00', '--job-id', '132', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpzezq2gvi']
+[2025-05-31T04:02:14.977-0600] {standard_task_runner.py:105} INFO - Job 132: Subtask filter_duplicates
+[2025-05-31T04:02:15.071-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.filter_duplicates scheduled__2025-05-30T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T04:02:15.243-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='filter_duplicates' AIRFLOW_CTX_EXECUTION_DATE='2025-05-30T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-30T10:00:00+00:00'
+[2025-05-31T04:02:15.246-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T04:02:20.855-0600] {logging_mixin.py:190} INFO - 📊 Found 476424 unique cable modems after removing cloned.
+[2025-05-31T04:02:35.180-0600] {logging_mixin.py:190} INFO - 🧹 Filtered out 216 CM_MACs that appeared more than 8 times.
+[2025-05-31T04:02:35.183-0600] {logging_mixin.py:190} INFO - 📝 Remaining records: 1773815
+[2025-05-31T04:02:35.330-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T04:02:35.350-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T04:02:35.350-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=filter_duplicates, run_id=scheduled__2025-05-30T10:00:00+00:00, execution_date=20250530T100000, start_date=20250531T100214, end_date=20250531T100235
+[2025-05-31T04:02:35.457-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T04:02:35.506-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T04:02:35.511-0600] {local_task_job_runner.py:245} INFO - ::endgroup::

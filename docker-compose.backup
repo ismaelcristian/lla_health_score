@@ -61,9 +61,6 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
-    AIRFLOW__CORE__AIRFLOW_LOCAL_SETTINGS: /opt/airflow/config/airflow_local_settings.py
-    AIRFLOW__CORE__DEFAULT_TIMEZONE: America/Mexico_City
-    AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: America/Mexico_City
     # yamllint disable rule:line-length
     # Use simple http server on scheduler for health checks
     # See https://airflow.apache.org/docs/apache-airflow/stable/administration-and-deployment/logging-monitoring/check-health.html#scheduler-health-check-server

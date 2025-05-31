@@ -1,0 +1,24 @@
+[2025-05-28T00:13:03.211-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-28T00:13:03.246-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.map_nodes scheduled__2025-05-27T06:00:00+00:00 [queued]>
+[2025-05-28T00:13:03.263-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.map_nodes scheduled__2025-05-27T06:00:00+00:00 [queued]>
+[2025-05-28T00:13:03.264-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-28T00:13:03.288-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): map_nodes> on 2025-05-27 06:00:00+00:00
+[2025-05-28T00:13:03.300-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=79858) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-28T00:13:03.302-0600] {standard_task_runner.py:72} INFO - Started process 79860 to run task
+[2025-05-28T00:13:03.304-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'map_nodes', 'scheduled__2025-05-27T06:00:00+00:00', '--job-id', '107', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmp4ccx29pd']
+[2025-05-28T00:13:03.308-0600] {standard_task_runner.py:105} INFO - Job 107: Subtask map_nodes
+[2025-05-28T00:13:03.391-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.map_nodes scheduled__2025-05-27T06:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-28T00:13:03.544-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='map_nodes' AIRFLOW_CTX_EXECUTION_DATE='2025-05-27T06:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-27T06:00:00+00:00'
+[2025-05-28T00:13:03.546-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-28T00:13:03.574-0600] {logging_mixin.py:190} INFO - 📍 Loading classified modems and node map...
+[2025-05-28T00:13:05.632-0600] {logging_mixin.py:190} INFO - 📦 Modems before mapping: 476836
+[2025-05-28T00:13:06.084-0600] {logging_mixin.py:190} INFO - ⚠️ Modems without node mapping: 18
+[2025-05-28T00:13:10.640-0600] {logging_mixin.py:190} INFO - ✅ Saved mapped modem data with node assignment to cm_mapped.csv (478182 rows)
+[2025-05-28T00:13:10.701-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-28T00:13:10.719-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-28T00:13:10.720-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=map_nodes, run_id=scheduled__2025-05-27T06:00:00+00:00, execution_date=20250527T060000, start_date=20250528T061303, end_date=20250528T061310
+[2025-05-28T00:13:10.840-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-28T00:13:10.882-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-28T00:13:10.884-0600] {local_task_job_runner.py:245} INFO - ::endgroup::
