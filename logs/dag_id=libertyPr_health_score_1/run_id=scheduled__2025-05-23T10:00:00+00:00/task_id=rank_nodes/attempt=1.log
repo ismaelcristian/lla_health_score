@@ -1,0 +1,42 @@
+[2025-05-31T09:53:24.236-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T09:53:24.274-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.rank_nodes scheduled__2025-05-23T10:00:00+00:00 [queued]>
+[2025-05-31T09:53:24.292-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.rank_nodes scheduled__2025-05-23T10:00:00+00:00 [queued]>
+[2025-05-31T09:53:24.293-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T09:53:24.318-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): rank_nodes> on 2025-05-23 10:00:00+00:00
+[2025-05-31T09:53:24.331-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1445) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T09:53:24.334-0600] {standard_task_runner.py:72} INFO - Started process 1455 to run task
+[2025-05-31T09:53:24.337-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'rank_nodes', 'scheduled__2025-05-23T10:00:00+00:00', '--job-id', '164', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpckvrwakd']
+[2025-05-31T09:53:24.342-0600] {standard_task_runner.py:105} INFO - Job 164: Subtask rank_nodes
+[2025-05-31T09:53:24.449-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.rank_nodes scheduled__2025-05-23T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T09:53:24.603-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='rank_nodes' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-23T10:00:00+00:00'
+[2025-05-31T09:53:24.605-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T09:54:26.985-0600] {logging_mixin.py:190} INFO - 📊 Ranked 3607 nodes and saved results to node_ranking_results.csv.
+[2025-05-31T09:54:27.030-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T09:54:27.051-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T09:54:27.051-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=rank_nodes, run_id=scheduled__2025-05-23T10:00:00+00:00, execution_date=20250523T100000, start_date=20250531T155324, end_date=20250531T155427
+[2025-05-31T09:54:27.152-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T09:54:27.196-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T09:54:27.198-0600] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-31T21:41:51.835-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T21:41:51.873-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.rank_nodes scheduled__2025-05-23T10:00:00+00:00 [queued]>
+[2025-05-31T21:41:51.888-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.rank_nodes scheduled__2025-05-23T10:00:00+00:00 [queued]>
+[2025-05-31T21:41:51.889-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T21:41:51.907-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): rank_nodes> on 2025-05-23 10:00:00+00:00
+[2025-05-31T21:41:51.918-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=10588) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T21:41:51.920-0600] {standard_task_runner.py:72} INFO - Started process 10590 to run task
+[2025-05-31T21:41:51.922-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'rank_nodes', 'scheduled__2025-05-23T10:00:00+00:00', '--job-id', '337', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpmq8kp6ba']
+[2025-05-31T21:41:51.926-0600] {standard_task_runner.py:105} INFO - Job 337: Subtask rank_nodes
+[2025-05-31T21:41:52.017-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.rank_nodes scheduled__2025-05-23T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T21:41:52.172-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='rank_nodes' AIRFLOW_CTX_EXECUTION_DATE='2025-05-23T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-23T10:00:00+00:00'
+[2025-05-31T21:41:52.175-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T21:42:51.366-0600] {logging_mixin.py:190} INFO - 📊 Ranked 3608 nodes and saved results to node_ranking_results.csv.
+[2025-05-31T21:42:51.405-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T21:42:51.424-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T21:42:51.424-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=rank_nodes, run_id=scheduled__2025-05-23T10:00:00+00:00, execution_date=20250523T100000, start_date=20250601T034151, end_date=20250601T034251
+[2025-05-31T21:42:51.555-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T21:42:51.593-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T21:42:51.595-0600] {local_task_job_runner.py:245} INFO - ::endgroup::

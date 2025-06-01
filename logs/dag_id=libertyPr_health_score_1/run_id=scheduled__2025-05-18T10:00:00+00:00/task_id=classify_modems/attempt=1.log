@@ -1,0 +1,57 @@
+[2025-05-31T20:15:00.180-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T20:15:00.215-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.classify_modems scheduled__2025-05-18T10:00:00+00:00 [queued]>
+[2025-05-31T20:15:00.229-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.classify_modems scheduled__2025-05-18T10:00:00+00:00 [queued]>
+[2025-05-31T20:15:00.229-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T20:15:00.248-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): classify_modems> on 2025-05-18 10:00:00+00:00
+[2025-05-31T20:15:00.260-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=9397) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T20:15:00.263-0600] {standard_task_runner.py:72} INFO - Started process 9399 to run task
+[2025-05-31T20:15:00.263-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'classify_modems', 'scheduled__2025-05-18T10:00:00+00:00', '--job-id', '294', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmprc4ustpi']
+[2025-05-31T20:15:00.268-0600] {standard_task_runner.py:105} INFO - Job 294: Subtask classify_modems
+[2025-05-31T20:15:00.346-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.classify_modems scheduled__2025-05-18T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T20:15:00.499-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='classify_modems' AIRFLOW_CTX_EXECUTION_DATE='2025-05-18T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-18T10:00:00+00:00'
+[2025-05-31T20:15:00.501-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T20:15:00.505-0600] {logging_mixin.py:190} INFO - 📥 Loading modem and status data...
+[2025-05-31T20:15:05.709-0600] {logging_mixin.py:190} INFO - ✅ Loaded modem data: 1783965 rows from /tmp/modem_data.csv
+[2025-05-31T20:15:05.710-0600] {logging_mixin.py:190} INFO - ✅ Loaded status data: 478094 rows from /tmp/modem_status.csv
+[2025-05-31T20:15:06.169-0600] {logging_mixin.py:190} INFO - 📊 Unique CM_MACs in modem_df: 477347
+[2025-05-31T20:15:06.291-0600] {logging_mixin.py:190} INFO - 📊 Unique CM_MACs in status_df: 477529
+[2025-05-31T20:15:06.292-0600] {logging_mixin.py:190} INFO - 🧮 Classifying each channel...
+[2025-05-31T20:15:52.568-0600] {logging_mixin.py:190} INFO - ✅ Channel classification complete.
+[2025-05-31T20:15:52.662-0600] {logging_mixin.py:190} INFO -          CM_MAC       PTIME Channel_Status
+0  0090EA0BB29A  2025-05-18           Good
+1  400D1081147B  2025-05-18           Good
+2  1835D1DFF63B  2025-05-18           Good
+3  DCA6336CEC73  2025-05-18           Good
+4  DCA6336CEC73  2025-05-18           Good
+[2025-05-31T20:15:52.685-0600] {logging_mixin.py:190} INFO - 📊 Grouping and summarizing modem data...
+[2025-05-31T20:25:48.041-0600] {logging_mixin.py:190} INFO - ✅ Grouped modem data shape: (477347, 4)
+[2025-05-31T20:25:48.131-0600] {logging_mixin.py:190} INFO - ✅ Summarized modem data (head):
+[2025-05-31T20:25:48.155-0600] {logging_mixin.py:190} INFO -          CM_MAC       PTIME  ...              CHANNEL_NAME TX_MAX
+0  00015C6CD846  2025-05-18  ...  cable-upstream 3/10/12.0    NaN
+1  000711146ABC  2025-05-18  ...    cable-upstream 5/8/3.0    NaN
+2  00071117BBAE  2025-05-18  ...    cable-upstream 2/9/2.0    NaN
+3  00071117BBBD  2025-05-18  ...    cable-upstream 4/8/3.0    NaN
+4  00071117BBD1  2025-05-18  ...    cable-upstream 3/3/2.0    NaN
+
+[5 rows x 6 columns]
+[2025-05-31T20:25:48.155-0600] {logging_mixin.py:190} INFO - 🔗 Merging modem-level data with status (LEFT join)...
+[2025-05-31T20:25:49.506-0600] {logging_mixin.py:190} INFO - ✅ Merged dataset shape: (477418, 19)
+[2025-05-31T20:25:49.508-0600] {logging_mixin.py:190} INFO - 📊 Rows with no ONLINE_COUNT after merge: 0
+[2025-05-31T20:25:49.508-0600] {logging_mixin.py:190} INFO - 🛠 Applying final classification rules...
+[2025-05-31T20:25:49.558-0600] {logging_mixin.py:190} INFO - 📊 Classification summary after status logic:
+[2025-05-31T20:25:49.566-0600] {logging_mixin.py:190} INFO - Category
+Good        261694
+Warning     122961
+Critical     87103
+Offline       5660
+Name: count, dtype: int64
+[2025-05-31T20:25:54.357-0600] {logging_mixin.py:190} INFO - 💾 Saved classified modems to /tmp/classified_modems.csv
+[2025-05-31T20:25:54.358-0600] {logging_mixin.py:190} INFO - 🔍 Final modem count: 477418 rows
+[2025-05-31T20:25:54.650-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T20:25:54.670-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T20:25:54.671-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=classify_modems, run_id=scheduled__2025-05-18T10:00:00+00:00, execution_date=20250518T100000, start_date=20250601T021500, end_date=20250601T022554
+[2025-05-31T20:25:54.828-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T20:25:54.881-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T20:25:54.883-0600] {local_task_job_runner.py:245} INFO - ::endgroup::

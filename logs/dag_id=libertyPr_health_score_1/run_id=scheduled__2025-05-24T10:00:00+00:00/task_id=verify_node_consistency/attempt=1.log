@@ -1,0 +1,81 @@
+[2025-05-31T08:38:39.556-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T08:38:39.604-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T08:38:39.622-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T08:38:39.622-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T08:38:39.645-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): verify_node_consistency> on 2025-05-24 10:00:00+00:00
+[2025-05-31T08:38:39.659-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=474) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T08:38:39.663-0600] {standard_task_runner.py:72} INFO - Started process 476 to run task
+[2025-05-31T08:38:39.664-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'verify_node_consistency', 'scheduled__2025-05-24T10:00:00+00:00', '--job-id', '149', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpda6a935t']
+[2025-05-31T08:38:39.669-0600] {standard_task_runner.py:105} INFO - Job 149: Subtask verify_node_consistency
+[2025-05-31T08:38:39.805-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T08:38:39.992-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='verify_node_consistency' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T10:00:00+00:00'
+[2025-05-31T08:38:39.997-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T08:38:41.708-0600] {logging_mixin.py:190} INFO - data set cleaned
+[2025-05-31T08:38:42.215-0600] {logging_mixin.py:190} INFO - ❌ Found inconsistent FIBER_NODEs.
+[2025-05-31T08:38:42.226-0600] {logging_mixin.py:190} INFO -      FIBER_NODE  Unique_CMTS_IDs  Unique_Channel_Sets
+1442     HG3506                2                    2
+1446     HG3510                2                    2
+2456    LL7002A                2                    2
+2457    LL7002B                2                    2
+[2025-05-31T08:38:42.246-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T08:38:42.264-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T08:38:42.265-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=verify_node_consistency, run_id=scheduled__2025-05-24T10:00:00+00:00, execution_date=20250524T100000, start_date=20250531T143839, end_date=20250531T143842
+[2025-05-31T08:38:42.346-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T08:38:42.398-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T08:38:42.400-0600] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-31T10:07:48.089-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T10:07:48.126-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T10:07:48.141-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T10:07:48.141-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T10:07:48.163-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): verify_node_consistency> on 2025-05-24 10:00:00+00:00
+[2025-05-31T10:07:48.176-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1648) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T10:07:48.179-0600] {standard_task_runner.py:72} INFO - Started process 1650 to run task
+[2025-05-31T10:07:48.180-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'verify_node_consistency', 'scheduled__2025-05-24T10:00:00+00:00', '--job-id', '169', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmp6efs5c56']
+[2025-05-31T10:07:48.184-0600] {standard_task_runner.py:105} INFO - Job 169: Subtask verify_node_consistency
+[2025-05-31T10:07:48.263-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T10:07:48.408-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='verify_node_consistency' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T10:00:00+00:00'
+[2025-05-31T10:07:48.410-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T10:07:49.599-0600] {logging_mixin.py:190} INFO - data set cleaned
+[2025-05-31T10:07:49.989-0600] {logging_mixin.py:190} INFO - ❌ Found inconsistent FIBER_NODEs.
+[2025-05-31T10:07:49.999-0600] {logging_mixin.py:190} INFO -      FIBER_NODE  Unique_CMTS_IDs  Unique_Channel_Sets
+1442     HG3506                2                    2
+1446     HG3510                2                    2
+2456    LL7002A                2                    2
+2457    LL7002B                2                    2
+[2025-05-31T10:07:50.016-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T10:07:50.036-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T10:07:50.037-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=verify_node_consistency, run_id=scheduled__2025-05-24T10:00:00+00:00, execution_date=20250524T100000, start_date=20250531T160748, end_date=20250531T160750
+[2025-05-31T10:07:50.124-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T10:07:50.170-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T10:07:50.172-0600] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-31T21:56:19.303-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T21:56:19.345-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T21:56:19.359-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T21:56:19.360-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T21:56:19.389-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): verify_node_consistency> on 2025-05-24 10:00:00+00:00
+[2025-05-31T21:56:19.400-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=10799) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T21:56:19.403-0600] {standard_task_runner.py:72} INFO - Started process 10801 to run task
+[2025-05-31T21:56:19.405-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'verify_node_consistency', 'scheduled__2025-05-24T10:00:00+00:00', '--job-id', '343', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmp6n6pvxs8']
+[2025-05-31T21:56:19.410-0600] {standard_task_runner.py:105} INFO - Job 343: Subtask verify_node_consistency
+[2025-05-31T21:56:19.504-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.verify_node_consistency scheduled__2025-05-24T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T21:56:19.673-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='verify_node_consistency' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T10:00:00+00:00'
+[2025-05-31T21:56:19.676-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T21:56:20.831-0600] {logging_mixin.py:190} INFO - data set cleaned
+[2025-05-31T21:56:21.224-0600] {logging_mixin.py:190} INFO - ❌ Found inconsistent FIBER_NODEs.
+[2025-05-31T21:56:21.234-0600] {logging_mixin.py:190} INFO -      FIBER_NODE  Unique_CMTS_IDs  Unique_Channel_Sets
+1442     HG3506                2                    2
+1446     HG3510                2                    2
+2456    LL7002A                2                    2
+2457    LL7002B                2                    2
+[2025-05-31T21:56:21.254-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T21:56:21.274-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T21:56:21.274-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=verify_node_consistency, run_id=scheduled__2025-05-24T10:00:00+00:00, execution_date=20250524T100000, start_date=20250601T035619, end_date=20250601T035621
+[2025-05-31T21:56:21.349-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T21:56:21.398-0600] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T21:56:21.400-0600] {local_task_job_runner.py:245} INFO - ::endgroup::

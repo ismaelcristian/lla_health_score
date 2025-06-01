@@ -1,0 +1,172 @@
+[2025-05-31T08:39:59.740-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T08:39:59.776-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T08:39:59.791-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T08:39:59.791-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T08:39:59.809-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): send_to_elasticsearch> on 2025-05-24 10:00:00+00:00
+[2025-05-31T08:39:59.820-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=501) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T08:39:59.823-0600] {standard_task_runner.py:72} INFO - Started process 503 to run task
+[2025-05-31T08:39:59.824-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'send_to_elasticsearch', 'scheduled__2025-05-24T10:00:00+00:00', '--job-id', '152', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpn6t7ilhz']
+[2025-05-31T08:39:59.828-0600] {standard_task_runner.py:105} INFO - Job 152: Subtask send_to_elasticsearch
+[2025-05-31T08:39:59.914-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T08:40:00.067-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='send_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T10:00:00+00:00'
+[2025-05-31T08:40:00.069-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T08:40:00.112-0600] {logging_mixin.py:190} INFO - 📋 Columns in ranking file: ['FIBER_NODE', 'CMTS_ID', 'Critical', 'Good', 'Offline', 'Warning', 'Total_Modems', 'Critical_Rate', 'Warning_Rate', 'Node_Size_Amplified', 'Health_Score', 'Attention_Priority']
+[2025-05-31T08:40:02.147-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/elasticsearch/_sync/client/__init__.py:403: SecurityWarning: Connecting to 'https://10.212.56.57:9200' using TLS with verify_certs=False is insecure
+  _transport = transport_class(
+
+[2025-05-31T08:40:02.746-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:02.812-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.077s]
+[2025-05-31T08:40:02.834-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:02.908-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.074s]
+[2025-05-31T08:40:02.978-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:03.210-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.233s]
+[2025-05-31T08:40:03.261-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:03.335-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.075s]
+[2025-05-31T08:40:03.372-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:03.427-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.056s]
+[2025-05-31T08:40:03.454-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:03.514-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.061s]
+[2025-05-31T08:40:03.535-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:03.603-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.068s]
+[2025-05-31T08:40:03.614-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T08:40:03.631-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.018s]
+[2025-05-31T08:40:03.632-0600] {logging_mixin.py:190} INFO - ✅ Sent 3608 documents to Elasticsearch index 'hs_lpr'
+[2025-05-31T08:40:03.637-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T08:40:03.658-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T08:40:03.659-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=send_to_elasticsearch, run_id=scheduled__2025-05-24T10:00:00+00:00, execution_date=20250524T100000, start_date=20250531T143959, end_date=20250531T144003
+[2025-05-31T08:40:03.747-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T08:40:03.783-0600] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T08:40:03.789-0600] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-31T10:09:10.429-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T10:09:10.465-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T10:09:10.478-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T10:09:10.478-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T10:09:10.497-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): send_to_elasticsearch> on 2025-05-24 10:00:00+00:00
+[2025-05-31T10:09:10.509-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1676) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T10:09:10.511-0600] {standard_task_runner.py:72} INFO - Started process 1678 to run task
+[2025-05-31T10:09:10.513-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'send_to_elasticsearch', 'scheduled__2025-05-24T10:00:00+00:00', '--job-id', '172', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpdsxxx3gt']
+[2025-05-31T10:09:10.517-0600] {standard_task_runner.py:105} INFO - Job 172: Subtask send_to_elasticsearch
+[2025-05-31T10:09:10.610-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T10:09:10.743-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='send_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T10:00:00+00:00'
+[2025-05-31T10:09:10.745-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T10:09:10.788-0600] {logging_mixin.py:190} INFO - 📋 Columns in ranking file: ['FIBER_NODE', 'CMTS_ID', 'Critical', 'Good', 'Offline', 'Warning', 'Total_Modems', 'Critical_Rate', 'Warning_Rate', 'Node_Size_Amplified', 'Health_Score', 'Attention_Priority']
+[2025-05-31T10:09:12.784-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/elasticsearch/_sync/client/__init__.py:403: SecurityWarning: Connecting to 'https://10.212.56.57:9200' using TLS with verify_certs=False is insecure
+  _transport = transport_class(
+
+[2025-05-31T10:09:13.332-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:13.571-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.249s]
+[2025-05-31T10:09:13.596-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:13.713-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.118s]
+[2025-05-31T10:09:13.733-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:13.805-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.072s]
+[2025-05-31T10:09:13.826-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:13.900-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.075s]
+[2025-05-31T10:09:13.923-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:14.007-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.084s]
+[2025-05-31T10:09:14.045-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:14.115-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.070s]
+[2025-05-31T10:09:14.134-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:14.204-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.070s]
+[2025-05-31T10:09:14.211-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T10:09:14.232-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.021s]
+[2025-05-31T10:09:14.233-0600] {logging_mixin.py:190} INFO - ✅ Sent 3608 documents to Elasticsearch index 'hs_lpr'
+[2025-05-31T10:09:14.235-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T10:09:14.253-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T10:09:14.254-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=send_to_elasticsearch, run_id=scheduled__2025-05-24T10:00:00+00:00, execution_date=20250524T100000, start_date=20250531T160910, end_date=20250531T160914
+[2025-05-31T10:09:14.339-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T10:09:14.371-0600] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T10:09:14.373-0600] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-31T21:57:39.013-0600] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-31T21:57:39.056-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T21:57:39.070-0600] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [queued]>
+[2025-05-31T21:57:39.071-0600] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-31T21:57:39.091-0600] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): send_to_elasticsearch> on 2025-05-24 10:00:00+00:00
+[2025-05-31T21:57:39.102-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=10825) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-31T21:57:39.104-0600] {standard_task_runner.py:72} INFO - Started process 10827 to run task
+[2025-05-31T21:57:39.105-0600] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'libertyPr_health_score_1', 'send_to_elasticsearch', 'scheduled__2025-05-24T10:00:00+00:00', '--job-id', '346', '--raw', '--subdir', 'DAGS_FOLDER/health_score_lpr.py', '--cfg-path', '/tmp/tmpbwedwlkk']
+[2025-05-31T21:57:39.110-0600] {standard_task_runner.py:105} INFO - Job 346: Subtask send_to_elasticsearch
+[2025-05-31T21:57:39.188-0600] {task_command.py:467} INFO - Running <TaskInstance: libertyPr_health_score_1.send_to_elasticsearch scheduled__2025-05-24T10:00:00+00:00 [running]> on host 439130e6349d
+[2025-05-31T21:57:39.330-0600] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='libertyPr_health_score_1' AIRFLOW_CTX_TASK_ID='send_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-05-24T10:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-24T10:00:00+00:00'
+[2025-05-31T21:57:39.332-0600] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-31T21:57:43.529-0600] {logging_mixin.py:190} INFO - 📋 Columns in ranking file: ['FIBER_NODE', 'CMTS_ID', 'Critical', 'Good', 'Offline', 'Warning', 'Total_Modems', 'Critical_Rate', 'Warning_Rate', 'Node_Size_Amplified', 'Health_Score', 'Attention_Priority']
+[2025-05-31T21:57:43.529-0600] {logging_mixin.py:190} INFO - 🕓 PTIME used for this run: 2025-05-24T12:00:00
+[2025-05-31T21:57:45.684-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/elasticsearch/_sync/client/__init__.py:403: SecurityWarning: Connecting to 'https://10.212.56.57:9200' using TLS with verify_certs=False is insecure
+  _transport = transport_class(
+
+[2025-05-31T21:57:46.206-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.253-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.058s]
+[2025-05-31T21:57:46.279-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.324-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.046s]
+[2025-05-31T21:57:46.348-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.391-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.044s]
+[2025-05-31T21:57:46.409-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.446-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.037s]
+[2025-05-31T21:57:46.464-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.501-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.038s]
+[2025-05-31T21:57:46.540-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.596-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.056s]
+[2025-05-31T21:57:46.632-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.681-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.049s]
+[2025-05-31T21:57:46.688-0600] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host '10.212.56.57'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+
+[2025-05-31T21:57:46.701-0600] {_transport.py:349} INFO - PUT https://10.212.56.57:9200/_bulk [status:200 duration:0.014s]
+[2025-05-31T21:57:46.702-0600] {logging_mixin.py:190} INFO - ✅ Sent 3608 documents to Elasticsearch index 'hs_lpr'
+[2025-05-31T21:57:46.781-0600] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-31T21:57:46.799-0600] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-31T21:57:46.800-0600] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=libertyPr_health_score_1, task_id=send_to_elasticsearch, run_id=scheduled__2025-05-24T10:00:00+00:00, execution_date=20250524T100000, start_date=20250601T035739, end_date=20250601T035746
+[2025-05-31T21:57:46.889-0600] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-31T21:57:46.914-0600] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-31T21:57:46.916-0600] {local_task_job_runner.py:245} INFO - ::endgroup::

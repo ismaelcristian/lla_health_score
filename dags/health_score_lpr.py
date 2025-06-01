@@ -1,6 +1,7 @@
 from elasticsearch import Elasticsearch
 from elasticsearch.helpers import bulk
 from airflow import DAG
+from airflow.decorators import task
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
 from sqlalchemy import create_engine
@@ -8,6 +9,26 @@ import pandas as pd
 import os
 from pendulum import timezone
 # ========== Task Functions ==========
+
+
+def log_airflow_dates(**context):
+    execution_date = context.get("execution_date")
+    data_interval_start = context.get("data_interval_start")
+    data_interval_end = context.get("data_interval_end")
+    logical_date = context.get("logical_date")
+    current_time = datetime.now()
+
+    # This is the date you use to filter PTIME = (end - 1 day)
+    ptime_date = (data_interval_end - timedelta(days=1)).date()
+
+    print("🧠 --- Airflow DAG Execution Context ---")
+    print(f"🕒 execution_date:      {execution_date} (Airflow 'logical' date)")
+    print(f"📆 data_interval_start: {data_interval_start}")
+    print(f"📆 data_interval_end:   {data_interval_end}")
+    print(f"🔁 logical_date:        {logical_date}")
+    print(f"⏱  current_time:        {current_time}")
+    print(f"📌 PTIME (used in SQL): {ptime_date}")
+    print("✅ -------------------------------------")
 
 def load_data(**context):
     execution_date = context["execution_date"]
@@ -26,8 +47,9 @@ def load_data(**context):
         f"@{mysql_config['host']}:3306/{mysql_config['database']}?ssl=true&ssl_verify_cert=false"
     )
     engine = create_engine(db_url)
-
-    target_date = execution_date.date() - timedelta(days=1)
+    target_date = context["data_interval_end"].date() - timedelta(days=1)
+    print('target date')
+    print(target_date)
 
     modem_query = f"""
     SELECT PTIME, PATH_2, CMTS_ID, CM_MAC, CHANNEL_NAME, CER_MAX, CCER_MAX, SNR_MIN, TX_MAX, PARTIAL_SERVICE
@@ -302,49 +324,63 @@ def rank_nodes(tmp_dir="/tmp"):
 
 
 def send_to_elasticsearch(**kwargs):
+    import pandas as pd
+    from elasticsearch import Elasticsearch
+    from elasticsearch.helpers import bulk
+    from datetime import datetime, timedelta
+
     execution_date = kwargs["execution_date"]
     date_str = execution_date.strftime("%Y-%m-%d")
 
     df = pd.read_csv("/tmp/node_ranking_results.csv")
+
+    # ✅ Read PTIME from modem_data.csv
+    modem_df = pd.read_csv("/tmp/modem_data.csv")
+    if "PTIME" in modem_df.columns and not modem_df.empty:
+        raw_ptime = pd.to_datetime(modem_df["PTIME"].iloc[0])
+        ptime = (raw_ptime + timedelta(hours=12)).strftime("%Y-%m-%dT%H:%M:%S")
+    else:
+        ptime = "unknown"
+
     print("📋 Columns in ranking file:", df.columns.tolist())
+    print("🕓 PTIME used for this run:", ptime)
 
     ES_HOST = "https://10.212.56.57:9200"
     ES_USER = "elastic"
     ES_PASS = "Broadbus1"
     ES_INDEX = "hs_lpr"
 
-    # Initialize Elasticsearch client
     es = Elasticsearch(
         ES_HOST,
         basic_auth=(ES_USER, ES_PASS),
-        verify_certs=False  # Set to True if you're using a valid cert
+        verify_certs=False
     )
 
-    # Build bulk actions with all row fields
     actions = []
     for _, row in df.iterrows():
         actions.append({
             "_index": ES_INDEX,
             "_source": {
-                **row.to_dict(),                # all fields from DataFrame
-                "execution_date": date_str     # add the run date
+                **row.to_dict(),
+                "PTIME": ptime  # ✅ Adjusted PTIME with 12:00 to avoid timezone rollback
             }
         })
 
-    # Send to Elasticsearch
     try:
         success, _ = bulk(es, actions)
         print(f"✅ Sent {success} documents to Elasticsearch index '{ES_INDEX}'")
     except Exception as e:
         print(f"❌ Elasticsearch bulk insert failed: {e}")
+        
+        
 # ========== DAG Definition ==========
 local_tz = timezone("America/Mexico_City")
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': local_tz.datetime(2025, 5, 22, 6, 0, 0),
-    'end_date': local_tz.datetime(2025, 11, 22, 6, 0, 0),
+    'start_date': local_tz.datetime(2025, 5, 18, 4, 0, 0),
+    'end_date': local_tz.datetime(2025, 11, 22, 4, 0, 0),
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
 }
@@ -365,6 +401,13 @@ load = PythonOperator(
     python_callable=load_data,
     provide_context=True,
     dag=dag
+)
+
+log_dates = PythonOperator(
+    task_id="log_dates",
+    python_callable=log_airflow_dates,
+    provide_context=True,
+    dag=dag,
 )
 
 filter_dup = PythonOperator(
@@ -404,4 +447,4 @@ send_es = PythonOperator(
     dag=dag
 )
 
-load >> filter_dup >> classify >> verify >> mapn >> rank >> send_es
+load >> log_dates >> filter_dup >> classify >> verify >> mapn >> rank >> send_es
