@@ -34,9 +34,9 @@ def load_data(**context):
     execution_date = context["execution_date"]
     mysql_config = {
         "host": "172.18.3.232",
-        "user": "libertypr_dataeng_views",
-        "password": "libertypr_dataeng",
-        "database": "libertypr",
+        "user": "cabletica_dataeng_views",
+        "password": "cabletica_dataeng",
+        "database": "cabletica",
         "main_table": "CM_SCQ_UP_DAY_FACTS",
         "node_table": "CHANNEL_TO_CMTS_FIBER_NODE",
         "status_table": "CM_STATUS_DAY_FACTS"
@@ -345,10 +345,10 @@ def send_to_elasticsearch(**kwargs):
     print("📋 Columns in ranking file:", df.columns.tolist())
     print("🕓 PTIME used for this run:", ptime)
 
-    ES_HOST = "https://10.212.56.57:9200"
+    ES_HOST = "https://192.168.102.20:9200"
     ES_USER = "elastic"
-    ES_PASS = "Broadbus1"
-    ES_INDEX = "hs_lpr"
+    ES_PASS = "Ben-fong-torres-3"
+    ES_INDEX = "hs_cabletica"
 
     es = Elasticsearch(
         ES_HOST,

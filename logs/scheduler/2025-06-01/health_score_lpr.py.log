@@ -1,7 +1,0 @@
-[2025-06-01T07:31:58.821-0600] {processor.py:186} INFO - Started process (PID=22705) to work on /opt/airflow/dags/health_score_lpr.py
-[2025-06-01T07:31:58.823-0600] {processor.py:914} INFO - Processing file /opt/airflow/dags/health_score_lpr.py for tasks to queue
-[2025-06-01T07:31:58.826-0600] {logging_mixin.py:190} INFO - [2025-06-01T07:31:58.825-0600] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/health_score_lpr.py
-[2025-06-01T07:32:00.294-0600] {processor.py:925} INFO - DAG(s) 'libertyPr_health_score_1' retrieved from /opt/airflow/dags/health_score_lpr.py
-[2025-06-01T07:32:00.333-0600] {logging_mixin.py:190} INFO - [2025-06-01T07:32:00.333-0600] {dag.py:3239} INFO - Sync 1 DAGs
-[2025-06-01T07:32:00.375-0600] {logging_mixin.py:190} INFO - [2025-06-01T07:32:00.374-0600] {dag.py:4180} INFO - Setting next_dagrun for libertyPr_health_score_1 to 2025-06-01 10:00:00+00:00, run_after=2025-06-02 10:00:00+00:00
-[2025-06-01T07:32:00.401-0600] {processor.py:208} INFO - Processing /opt/airflow/dags/health_score_lpr.py took 1.598 seconds
